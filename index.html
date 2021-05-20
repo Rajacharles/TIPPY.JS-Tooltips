@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPPY JS - Tooltip Designs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2 class="py-5">Tippy.js Tooltips Used For Product Highlights</h2>
+          </div>
+          
+            <div class="ph-wrap">
+                <img src="bg-1.jpg" class="img-fluid" alt="Airpods">
+                <div class="ph-inner">
+                    <a id="ph-1" class="ph-trigger" style="left: 80%; top: 72%;" data-template="airpods">
+                        <span class="ph-trigger-icon"></span>
+                        <span class="ph-trigger-spot"></span>
+                    </a>
+                    <div id="airpods" style="display:none;">
+                        <img src="airpods.jpg" alt="Airpods" class="img-fluid">
+                        <div class="m-3 text-center">
+                        AirPods Pro
+                        </div>
+                    </div>
+
+
+                    <a id="ph-2" class="ph-trigger" style="left: 25%; top: 75%;" data-template="Watch">
+                        <span class="ph-trigger-icon"></span>
+                        <span class="ph-trigger-spot"></span>
+                    </a>
+                    <div id="Watch" style="display:none;">
+                        <img src="apple_watch.jpg" alt="Apple Watch" class="img-fluid">
+                        <div class="m-3 text-center">
+                        Apple Watch Series 4
+                        </div>
+                    </div>
+
+
+                    <a id="ph-3" class="ph-trigger" style="left: 47%; top: 27%;" data-template="Pro">
+                        <span class="ph-trigger-icon"></span>
+                        <span class="ph-trigger-spot"></span>
+                    </a>
+                    <div id="Pro" style="display:none;">
+                        <img src="iphone_12.jpg" alt="Iphone 12" class="img-fluid">
+                        <div class="m-3 text-center">
+                        iPhone 12 Pro Max
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+          
+        </div>
+      </div>
+
+      <script src="https://unpkg.com/@popperjs/core@2"></script>
+      <script src="https://unpkg.com/tippy.js@6"></script>
+      <script>
+          tippy('#ph-1', {
+            content(reference) {
+                const id = reference.getAttribute('data-template');
+                const template = document.getElementById(id);
+                return template.innerHTML;
+            },
+            allowHTML: true,
+            });
+
+            tippy('#ph-2', {
+            content(reference) {
+                const id = reference.getAttribute('data-template');
+                const template = document.getElementById(id);
+                return template.innerHTML;
+            },
+            allowHTML: true,
+            });
+
+            tippy('#ph-3', {
+            content(reference) {
+                const id = reference.getAttribute('data-template');
+                const template = document.getElementById(id);
+                return template.innerHTML;
+            },
+            allowHTML: true,
+            });
+      </script>
+</body>
+</html>
